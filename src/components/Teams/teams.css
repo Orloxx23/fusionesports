@@ -1,0 +1,48 @@
+.teams {
+  width: 100%;
+  height: 40vh;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  gap: 30px;
+  margin-bottom: 100px;
+}
+
+.teams h1{
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.teams__container {
+  height: 35%;
+  width: 100%;
+  display: flex;
+}
+
+.teams__container:active {
+  cursor: grabbing !important;
+}
+
+.onlyMobile {
+  display: none !important;
+}
+
+@media screen and (max-width: 968px) {
+  .teams {
+    margin-bottom: 0px;
+  }
+  .onlyDesktop {
+    display: none !important;
+  }
+
+  .onlyMobile {
+    display: flex !important;
+  }
+  
+}

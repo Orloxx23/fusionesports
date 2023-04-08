@@ -1,0 +1,24 @@
+@media screen and (max-width: 968px) {
+  .hashtag {
+    max-width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden !important;
+    gap: 50px;
+    font-size: 3rem;
+    -webkit-text-stroke: 2px var(--primary-color);
+    color: transparent;
+    font-weight: 700;
+    border-top: 5px solid var(--primary-color);
+    border-bottom: 5px solid var(--primary-color);
+    padding: 10px 0px;
+  }
+
+  .hashtag div {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    overflow: hidden !important;
+  }
+}

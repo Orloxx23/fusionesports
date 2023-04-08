@@ -1,0 +1,24 @@
+.hashtag {
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  gap: 50px;
+  font-size: 10rem;
+  -webkit-text-stroke: 2px var(--primary-color);
+  color: transparent;
+  font-weight: 700;
+  border-top: 5px solid var(--primary-color);
+  border-bottom: 5px solid var(--primary-color);
+  padding: 20px 0px;
+}
+
+.hashtag div {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  overflow: hidden;
+}

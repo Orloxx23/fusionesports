@@ -1,0 +1,46 @@
+.team {
+  width: 100%;
+  min-height: calc(100vh - var(--navbar-height));
+  color: white;
+}
+
+.team__body {
+  display: flex;
+  width: 100%;
+  min-height: 60vh;
+}
+
+.team__members {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - (var(--padding) * 2));
+  min-height: 60vh;
+  padding: var(--padding);
+  gap: 40px;
+}
+
+.team__right {
+  width: calc(50% - (var(--padding) * 2));
+  padding: var(--padding);
+  min-height: 60vh;
+}
+
+.team__members__players {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (max-width: 968px) {
+  .team__body {
+    flex-direction: column;
+  }
+
+  .team__members {
+    width: calc(100% - (var(--padding) * 2));
+  }
+
+  .team__right {
+    width: calc(100% - (var(--padding) * 2));
+  }
+}

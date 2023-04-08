@@ -1,0 +1,27 @@
+.content-section__instagram__body__post {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.content-section__instagram__body__post__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s ease-in-out;
+}
+
+.content-section__instagram__body__post:hover
+  .content-section__instagram__body__post__img {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 968px) {
+  .content-section__instagram__body__post {
+    width: 100%;
+    height: 250px;
+  }
+}

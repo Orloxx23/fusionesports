@@ -1,0 +1,62 @@
+.videomodal {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  transition: all 0.5s ease-in-out;
+}
+
+.videomodal__back {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.videomodal__video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(160px * 6);
+  height: calc(90px * 6);
+  z-index: 100;
+}
+
+.videomodal-hide {
+  display: none;
+}
+
+.videomodal__close__button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 968px) {
+  .videomodal__video {
+    width: 97%;
+    height: 40%;
+  }
+}

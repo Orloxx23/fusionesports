@@ -1,0 +1,78 @@
+.achievements {
+  width: calc(100%);
+  min-height: calc(50vh);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.achievements__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.achievement {
+  position: relative;
+  width: calc(100% - 80px);
+  min-height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  overflow: hidden;
+}
+
+.achievement__left h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.achievement__left p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.achievement__right {
+  font-weight: 700;
+}
+
+.achievement__loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(0);
+  transition: 0.3s ease-in-out;
+}
+
+.achievement__loading_onload {
+  animation: showEvent 0.4s ease-in-out forwards;
+}
+
+.achievement__loading img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  opacity: 0.1;
+}
+
+@keyframes showEvent {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}

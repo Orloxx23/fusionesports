@@ -1,0 +1,107 @@
+.content-section__youtube__card {
+  position: relative;
+  width: calc(160px * 4.5);
+  height: calc(90px * 4.5);
+  color: white;
+  cursor: pointer;
+}
+
+.content-section__youtube__card:active {
+  cursor: grabbing;
+}
+
+.content-section__youtube__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.content-section__youtube__text {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  width: calc(100% - 40px);
+  min-height: 30%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transform: translateY(100%);
+  transition: 0.3s ease-in-out;
+}
+
+.content-section__youtube__card:hover .content-section__youtube__text {
+  transform: translateY(0);
+}
+
+.content-section__youtube__title {
+  width: 100%;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.content-section__youtube__timeago {
+  width: 100%;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 968px) {
+  .content-section__youtube__card {
+    position: relative;
+    /* width: calc(160px * 2);
+    height: calc(90px * 2); */
+    width: 95%;
+    max-height: calc(90px * 2);
+  }
+
+  .content-section__youtube__card:active {
+    cursor: grabbing;
+  }
+
+  .content-section__youtube__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .content-section__youtube__text {
+    display: none;
+  }
+
+  .content-section__youtube__card:hover .content-section__youtube__text {
+    transform: translateY(0);
+  }
+
+  .content-section__youtube__title {
+    width: 100%;
+    display: flex;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .content-section__youtube__timeago {
+    width: 100%;
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-height: 800px) and (min-width: 1024px) {
+  .content-section__youtube__card {
+    width: 95%;
+    height: 100%;
+  }
+}

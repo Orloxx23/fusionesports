@@ -1,0 +1,45 @@
+.team__card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: black;
+  /* cursor: pointer; */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.team__card:active {
+  cursor: grabbing !important;
+}
+
+.team__card__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.5;
+  transition: 0.3s ease-in-out;
+}
+
+.team__card__text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.team__card:hover .team__card__background {
+  opacity: 0.8;
+}

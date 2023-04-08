@@ -1,0 +1,5 @@
+@media screen and (max-width: 968px) {
+  .team__card__text {
+    font-size: 1.2rem;
+  }
+}
