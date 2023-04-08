@@ -7,7 +7,10 @@ export const getValorantTeam = async (teamId) => {
 
   await fetch(`/team/${teamId}`, requestOptions)
     .then((response) => response.text())
-    .then((result) => (team = JSON.parse(result)))
+    .then((result) => {
+      console.log("🚀 ~ file: index.js:11 ~ .then ~ result:", result);
+      team = JSON.parse(result);
+    })
     .catch((error) => console.log("error", error));
 
   return team;
