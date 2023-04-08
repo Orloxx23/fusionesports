@@ -51,6 +51,8 @@ To run this project, you will need to add the following environment variables to
 
 `REACT_APP_YOUTUBE_PLAYLIST_ID`
 
+`REACT_APP_API_URL`
+
 
 ## Built with 🛠️
 
