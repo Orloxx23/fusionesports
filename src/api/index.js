@@ -5,7 +5,7 @@ export const getValorantTeam = async (teamId) => {
     redirect: "follow",
   };
 
-  await fetch(`/team/${teamId}`, requestOptions)
+  await fetch(`${process.env.REACT_APP_API_URL}/team/${teamId}`, requestOptions)
     .then((response) => response.text())
     .then((result) => {
       console.log("🚀 ~ file: index.js:11 ~ .then ~ result:", result);
