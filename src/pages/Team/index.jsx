@@ -109,7 +109,7 @@ export default function Team() {
             </div>
           </div>
           <div className="team__right">
-          <Achievements events={team.events} loading={loading}/>
+          <Achievements events={team?.events} loading={loading}/>
           </div>
         </div>
       </section>
