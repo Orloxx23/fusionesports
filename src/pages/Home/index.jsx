@@ -144,7 +144,7 @@ export default function Home() {
               modules={[FreeMode]}
               className="content-section__youtube__body onlyDesktop"
             >
-              {videos.map((video) => (
+              {videos?.map((video) => (
                 <SwiperSlide key={video.id}>
                   <VideoCard video={video} action={handleVideoSelected} />
                 </SwiperSlide>
@@ -152,7 +152,7 @@ export default function Home() {
             </Swiper>
 
             <div className="content-section__youtube__body__mobile onlyMobile">
-              {videos.map((video) => (
+              {videos?.map((video) => (
                 <VideoCard
                   key={video.id}
                   video={video}
