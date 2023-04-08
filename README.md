@@ -61,5 +61,5 @@ To run this project, you will need to add the following environment variables to
 
 ## Authors
 
-- [@Orlando Mina](https://www.github.com/orloxx)
+- [@Orlando Mina](https://www.github.com/Orloxx23)
 
