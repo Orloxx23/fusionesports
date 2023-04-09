@@ -19,6 +19,7 @@ export default function Footer() {
                 href="https://twitter.com/fusionfsgg"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Twitter"
               >
                 <i className="fa-brands fa-twitter"></i>
               </a>
@@ -27,6 +28,7 @@ export default function Footer() {
                 href="https://www.instagram.com/fusionfsgg/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
               >
                 <i className="fa-brands fa-instagram"></i>
               </a>
@@ -35,6 +37,7 @@ export default function Footer() {
                 href="https://www.youtube.com/fusionesports"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Youtube"
               >
                 <i className="fa-brands fa-youtube"></i>
               </a>
@@ -43,6 +46,7 @@ export default function Footer() {
                 href="https://www.twitch.tv/fusionfsgg"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Twitch"
               >
                 <i className="fa-brands fa-twitch"></i>
               </a>
@@ -51,6 +55,7 @@ export default function Footer() {
                 href="https://www.tiktok.com/@fusionfsgg"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="TikTok"
               >
                 <i className="fa-brands fa-tiktok"></i>
               </a>
@@ -61,37 +66,38 @@ export default function Footer() {
           <div className="footer__container__center__column">
             <h3>teams</h3>
             <ul>
-              <Link to="/teams/valorant">
-                <li>valorant</li>
-              </Link>
-              <Link to="/teams/valorant-x">
-                <li>valorant | fem</li>
-              </Link>
-              <Link to="">
-                <li>fortnite</li>
-              </Link>
-              <Link to="">
-                <li>counter strike</li>
-              </Link>
-              <Link to="">
-                <li>creators</li>
-              </Link>
+              <li>
+                <Link aria-label="valorant" to="/teams/valorant">valorant</Link>
+              </li>
+
+              <li>
+                <Link aria-label="valorant fem" to="/teams/valorant-x">valorant | fem</Link>
+              </li>
+              <li>
+                <Link aria-label="fortnite" to="">fortnite</Link>
+              </li>
+              <li>
+                <Link aria-label="csgo" to="">counter strike</Link>
+              </li>
+              <li>
+                <Link aria-label="creators" to="">creators</Link>
+              </li>
             </ul>
           </div>
           <div className="footer__container__center__column">
             <h3>Legal</h3>
             <ul>
-              <Link to="">
-                <li>all terms and policies</li>
-              </Link>
+              <li>
+                <Link aria-label="policies" to="">all terms and policies</Link>
+              </li>
             </ul>
           </div>
           <div className="footer__container__center__column">
             <h3>More</h3>
             <ul>
-              <Link to="">
-                <li>contact</li>
-              </Link>
+              <li>
+                <Link aria-label="contact" to="">contact</Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -102,7 +108,14 @@ export default function Footer() {
       <div className="footer__extra">
         <p>FUSION © 2023</p>
         <span>
-          With ♥ by <a target="_blank" href="https://orlandomm.vercel.app" rel="noreferrer">Orlando Mina</a>
+          With ♥ by{" "}
+          <a
+            target="_blank"
+            href="https://orlandomm.vercel.app"
+            rel="noreferrer"
+          >
+            Orlando Mina
+          </a>
         </span>
       </div>
     </footer>

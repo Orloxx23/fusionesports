@@ -8,31 +8,35 @@ import fortnite from "../../assets/img/teams/fortnite.jpg";
 import valorantx from "../../assets/img/teams/gamechangers.jpg";
 
 export default function TeamCoverpage({ gameTitle }) {
-    const [background, setBackground] = React.useState();
+  const [background, setBackground] = React.useState();
 
-    React.useEffect(() => {
-        switch (gameTitle) {
-            case "Valorant":
-                setBackground(valorant);
-                break;
-            case "CS:GO":
-                setBackground(csgo);
-                break;
-            case "Valorant: Game Changers":
-                setBackground(valorantx);
-                break;
-            case "Fortnite":
-                setBackground(fortnite);
-                break;
-            default:
-                setBackground("");
-        }
-    }, [gameTitle]);
+  React.useEffect(() => {
+    switch (gameTitle) {
+      case "Valorant":
+        setBackground(valorant);
+        break;
+      case "CS:GO":
+        setBackground(csgo);
+        break;
+      case "Valorant: Game Changers":
+        setBackground(valorantx);
+        break;
+      case "Fortnite":
+        setBackground(fortnite);
+        break;
+      default:
+        setBackground("");
+    }
+  }, [gameTitle]);
 
   return (
-    <section className="coverpage" >
-        <img className="coverpage__background" src={background} alt="" />
-        <p>{gameTitle}</p>
+    <section className="coverpage">
+      <img
+        className="coverpage__background"
+        src={background}
+        alt=""
+      />
+      <p>{gameTitle}</p>
     </section>
   );
 }

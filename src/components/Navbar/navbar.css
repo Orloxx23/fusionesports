@@ -1,4 +1,5 @@
 .navbar {
+  position: sticky;
   width: calc(100% - 5vw);
   height: calc(var(--navbar-height));
   padding: 0 var(--padding);
@@ -7,6 +8,7 @@
   color: white;
   background: var(--secondary-color);
   font-size: clamp(0.8rem, 2vw, 1rem);
+  z-index: 997;
 }
 
 .navbar__left {
@@ -52,8 +54,8 @@
   padding-top: 10px;
 }
 
-.dropdown__right{
-    right: 0;
+.dropdown__right {
+  right: 0;
 }
 
 .navbar__dropdown:hover .navbar__dropdown__content {

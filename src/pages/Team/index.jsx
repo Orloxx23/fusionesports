@@ -9,12 +9,26 @@ import {
   Teams,
 } from "../../components";
 import { getValorantTeam } from "../../api";
+import LoadingScreen from "../../components/LoadingScreen";
 
 export default function Team() {
   let { id } = useParams();
+  
   const [gameTitle, setGameTitle] = React.useState("");
   const [team, setTeam] = React.useState({});
+  const [getting, setGetting] = React.useState(true);
+
   const [loading, setLoading] = React.useState(true);
+  const [elements, setElements] = React.useState(0);
+  const [elementsLoaded, setElementsLoaded] = React.useState(0);
+
+  const loadElement = () => {
+    setElementsLoaded(elementsLoaded + 1);
+  };
+
+  useEffect(() => {
+    setElements(1);
+  }, []);
 
   useEffect(() => {
     switch (id) {
@@ -26,7 +40,6 @@ export default function Team() {
         break;
       case "valorant-x":
         setGameTitle("Valorant: Game Changers");
-        getValorantTeam(8310);
         break;
       case "fortnite":
         setGameTitle("Fortnite");
@@ -38,7 +51,7 @@ export default function Team() {
 
   useEffect(() => {
     (async () => {
-      setLoading(true);
+      setGetting(true);
       if (id === "valorant-x") {
         const team = await getValorantTeam(8310);
         setTeam(team);
@@ -49,7 +62,8 @@ export default function Team() {
         setTeam(team);
       }
 
-      setLoading(false);
+      loadElement();
+      setGetting(false);
     })();
   }, [id]);
 
@@ -65,7 +79,7 @@ export default function Team() {
           <div className="team__members">
             <div className="team__members__players">
               <h2>Team</h2>
-              {!loading ? (
+              {!getting ? (
                 team?.players &&
                 team.players.map((player) => (
                   <PlayerCard
@@ -78,17 +92,17 @@ export default function Team() {
                 ))
               ) : (
                 <>
-                  <PlayerCard loading={loading} />
-                  <PlayerCard loading={loading} />
-                  <PlayerCard loading={loading} />
-                  <PlayerCard loading={loading} />
-                  <PlayerCard loading={loading} />
+                  <PlayerCard loading={getting} />
+                  <PlayerCard loading={getting} />
+                  <PlayerCard loading={getting} />
+                  <PlayerCard loading={getting} />
+                  <PlayerCard loading={getting} />
                 </>
               )}
             </div>
             <div className="team__members__players">
               <h2>Staff</h2>
-              {!loading ? (
+              {!getting ? (
                 team?.staff &&
                 team.staff.map((player) => (
                   <PlayerCard
@@ -102,18 +116,25 @@ export default function Team() {
                 ))
               ) : (
                 <>
-                  <PlayerCard loading={loading} />
-                  <PlayerCard loading={loading} />
+                  <PlayerCard loading={getting} />
+                  <PlayerCard loading={getting} />
                 </>
               )}
             </div>
           </div>
           <div className="team__right">
-          <Achievements events={team?.events} loading={loading}/>
+            <Achievements events={team?.events} loading={getting} />
           </div>
         </div>
       </section>
       <Teams />
+
+      <LoadingScreen
+        loading={loading}
+        setLoading={setLoading}
+        elements={elements}
+        elementsLoaded={elementsLoaded}
+      />
     </>
   );
 }

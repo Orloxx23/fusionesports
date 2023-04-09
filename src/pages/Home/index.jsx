@@ -26,6 +26,7 @@ import {
   VideoModal,
 } from "../../components";
 import { getVideos } from "../../utils/youtube";
+import LoadingScreen from "../../components/LoadingScreen";
 
 const posts = [
   {
@@ -55,10 +56,23 @@ export default function Home() {
   const [open, setOpen] = React.useState(false);
   const [videoSelected, setVideoSelected] = React.useState({});
 
+  const [loading, setLoading] = React.useState(true);
+  const [elements, setElements] = React.useState(0);
+  const [elementsLoaded, setElementsLoaded] = React.useState(0);
+
+  const loadElement = () => {
+    setElementsLoaded(elementsLoaded + 1);
+  };
+
+  useEffect(() => {
+    setElements(1);
+  }, []);
+
   useEffect(() => {
     (async () => {
       const res = await getVideos();
       setVideos(res);
+      loadElement();
     })();
   }, []);
 
@@ -91,6 +105,7 @@ export default function Home() {
                   autoPlay
                   muted
                   loop
+                  onPlay={loadElement}
                 />
                 <video
                   src={video}
@@ -98,6 +113,7 @@ export default function Home() {
                   autoPlay
                   muted
                   loop
+                  onPlay={loadElement}
                 />
               </div>
             </div>
@@ -133,7 +149,11 @@ export default function Home() {
           <div className="content-section__youtube">
             <div className="content-section__youtube__head">
               <h2>Our latest videos</h2>
-              <a href="https://www.youtube.com/@fusionfsgg" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.youtube.com/@fusionfsgg"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button text="see our youtube channel" />
               </a>
             </div>
@@ -173,6 +193,12 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <LoadingScreen
+        loading={loading}
+        setLoading={setLoading}
+        elements={elements}
+        elementsLoaded={elementsLoaded}
+      />
     </>
   );
 }

@@ -8,6 +8,7 @@ export default function InstagramPost({ post }) {
       target="_blank"
       rel="noopener noreferrer"
       className="content-section__instagram__body__post"
+      aria-label="Instagram Post"
     >
       <img
         src={post.img}
