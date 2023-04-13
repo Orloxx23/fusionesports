@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./videocard.css";
 import moment from "moment/moment";
 
@@ -9,7 +9,7 @@ export default function VideoCard({ video, action }) {
       onClick={() => action(video)}
     >
       <img
-        src={video.snippet.thumbnails.maxres.url}
+        src={video.snippet.thumbnails.maxres?.url || video.snippet.thumbnails.standard?.url || video.snippet.thumbnails.high?.url || video.snippet.thumbnails.medium?.url || video.snippet.thumbnails.default.url}
         alt=""
         className="content-section__youtube__video"
       />
