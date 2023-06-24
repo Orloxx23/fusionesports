@@ -6,8 +6,10 @@ export const getValorantTeam = async (teamId) => {
   };
 
   await fetch(`${process.env.REACT_APP_API_URL}/v1/teams/${teamId}`, requestOptions)
-    .then((response) => response.text())
-    .then((result) => (team = JSON.parse(result)))
+    .then((response) => response.json())
+    .then((result) => {
+      team = result.data;
+    })
     .catch((error) => console.log("error", error));
 
   return team;

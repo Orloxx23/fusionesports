@@ -16,7 +16,7 @@ export default function PlayerCard({ img, user, name, country, tag, loading }) {
   useEffect(() => {
     if (loading) return;
     if (img.includes("owcdn")) {
-      setPlayerImg("https://" + img.substring(2));
+      setPlayerImg(img);
     } else {
       setNoImg(true);
       setPlayerImg(logo);
