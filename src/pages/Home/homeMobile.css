@@ -6,6 +6,7 @@
   .header__container {
     height: auto;
     flex-direction: column;
+    margin-top: 4.4rem;
   }
 
   .header__left {

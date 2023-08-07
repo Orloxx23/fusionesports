@@ -3,6 +3,7 @@ import "./navbar.css";
 import logo from "../../assets/img/logo.png";
 import Button from "../Button";
 import { Link } from "react-router-dom";
+import Streams from "../Streams";
 
 export default function Navbar() {
   return (
@@ -20,8 +21,12 @@ export default function Navbar() {
             </span>
 
             <div className="navbar__dropdown__content">
-              <Link to="/teams/valorant"><p>valorant</p></Link>
-              <Link to="/teams/valorant-x"><p>valorant | fem</p></Link>
+              <Link to="/teams/valorant">
+                <p>valorant</p>
+              </Link>
+              <Link to="/teams/valorant-x">
+                <p>valorant | fem</p>
+              </Link>
               <p>fornite</p>
               <p>counter strike</p>
               <p>creators</p>

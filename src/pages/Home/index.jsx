@@ -21,6 +21,7 @@ import {
   Button,
   Hashtag,
   InstagramPost,
+  Streams,
   Teams,
   VideoCard,
   VideoModal,
@@ -94,6 +95,7 @@ export default function Home() {
         setVideoSelected={setVideoSelected}
       />
       <main>
+        <Streams />
         <header>
           <div className="header__container">
             <div className="header__left">

@@ -10,6 +10,7 @@ import VideoModal from "./VideoModal";
 import TeamCoverpage from "./TeamCoverpage";
 import PlayerCard from "./PlayerCard";
 import Achievements from "./Achievements";
+import Streams from "./Streams";
 
 export {
   Navbar,
@@ -24,4 +25,5 @@ export {
   TeamCoverpage,
   PlayerCard,
   Achievements,
+  Streams,
 };
