@@ -6,7 +6,7 @@ export default function Streams() {
     <div className="streams_container">
       <iframe
         className="streams_iframe"
-        src="https://widgets.orlandomm.me/twitch/streamers?team=fusionesports"
+        src="https://mywidgets-alpha.vercel.app/twitch/streamers?team=fusionesports"
       ></iframe>
     </div>
   );
